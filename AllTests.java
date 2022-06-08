@@ -1,12 +1,35 @@
-package Lab11;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
-@RunWith(Suite.class)
-@SuiteClasses({ AllTests.class })
-
-public class AllTests {
+public class block {
+	private Object lock1=new Object();
+	private Object lock2=new Object();
+	private Object lock3=new Object();
+	
+	private void chemistry() {
+		synchronized(lock1) {
+			synchronized(lock2) {
+				synchronized(lock3) {
+					
+				}
+			}
+		}
+		
+	}
+	
+	public void physics() {
+		synchronized(lock1) {
+			synchronized(lock2) {
+				synchronized(lock3) {
+					System.out.println("bar");
+				}
+			}
+		}
+	}
+	public void maths() {
+		synchronized(lock1) {
+			synchronized(lock2) {
+				synchronized(lock3) {
+					System.out.println("chemistry");
+					
+				}
 
 }
